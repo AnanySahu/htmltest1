@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Survey Form</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            flex: 1 1 calc(50% - 20px);
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            flex: 1 1 100%;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            color: #444;
+        }
+
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Survey Form</h1>
+            <p>Please fill out this form to help us serve you better.</p>
+        </div>
+        <form id="survey-form">
+            <div class="form-group">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                <input type="text" id="title" name="title" placeholder="Title">
+                <input type="tel" id="phone" name="phone" placeholder="Phone">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="text" id="department" name="department" placeholder="Department">
+                <input type="text" id="company-name" name="company-name" placeholder="Company Name">
+                <input type="text" id="industry" name="industry" placeholder="Industry">
+                <input type="url" id="company-site" name="company-site" placeholder="Company Site">
+            </div>
+
+            <h2>Which of Our Services Are You Interested In?</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="services" value="Identity Design"> Identity Design</label>
+                <label><input type="checkbox" name="services" value="Social Media Design"> Social Media Design</label>
+                <label><input type="checkbox" name="services" value="Logo Design"> Logo Design</label>
+                <label><input type="checkbox" name="services" value="Website Development"> Website Development</label>
+                <label><input type="checkbox" name="services" value="Digital Marketing"> Digital Marketing</label>
+                <label><input type="checkbox" name="services" value="Design Guidelines"> Design Guidelines</label>
+            </div>
+            <textarea id="goals" name="goals" rows="4" placeholder="What are your goals you'd like us to help with?"></textarea>
+
+            <h2>How Did You Hear About Us?</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="referral" value="Print Advertising"> Print Advertising</label>
+                <label><input type="checkbox" name="referral" value="Direct Mail"> Direct Mail</label>
+                <label><input type="checkbox" name="referral" value="Online Advertising"> Online Advertising</label>
+                <label><input type="checkbox" name="referral" value="Sales Call"> Sales Call</label>
+                <label><input type="checkbox" name="referral" value="Referral"> Referral</label>
+                <label><input type="checkbox" name="referral" value="Others"> Others</label>
+            </div>
+
+            <textarea id="comments" name="comments" rows="4" placeholder="Additional Comments (anything you'd like us to know)?"></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for submitting the survey!');
+        });
+    </script>
+</body>
+</html>
