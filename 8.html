@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -63,4 +63,84 @@ Engineering College. My core subjects in the 2nd year are:</p>
     <li>Discrete Mathematics</li>
     </ul>
 </main>
-</body></html>
+</body></html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>DOM LEARNING</title>
+    <style>
+        .bg-black{
+            background-color: black;
+        }
+        .a{
+            color: aqua;
+        }
+        .b{
+            color: aqua;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="aa" class="a">Lorem ipsum dolor sit amet.</h1>
+        <h2 id="bb" class="b">Lorem ipsum dolor sit amet.</h2>
+        
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div class="parent" style="background-color: black; color: yellow;">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    for(let i=0;i<parent.children.length;i++){
+        console.log(parent.children[i].innerHTML);
+    }
+</script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <label for="">Javascript</label>
+    </ul>
+</body> 
+<script>
+    function addLanguage(langName){
+      const li=  document.createElement('li');
+      li.innerHTML=langName;
+      document.querySelector('.language').appendChild(li);
+      
+    }
+    addLanguage("python")
+    addLanguage("Java")
+    function addoptilanguage(langname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname));
+    }
+    addoptilanguage('golang');
+</script>
+</html>

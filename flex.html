@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,4 +26,240 @@
   </div>
 
 </body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" >
+    <button onclick="fun">Click</button>
+    <p id="aa"></p>
+</body>
+<script>
+    function fun(){
+       let inp=document.getElementById('aa');
+       let y=inp.value;
+       inp.innerHTML=y;
+    }
+</script>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — lllll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --accent:#0f62fe;
+      --muted:#6b7280;
+      --max-width:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:var(--bg);
+      color:#111827;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .resume{
+      width:100%;
+      max-width:var(--max-width);
+      background:var(--card);
+      box-shadow:0 6px 18px rgba(15,23,42,0.08);
+      border-radius:12px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:260px 1fr;
+      min-height:560px;
+    }
+    /* left column */
+    .left{
+      background:linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      padding:28px 20px;
+      border-right:1px solid #eef2f7;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+    }
+    .photo{
+      width:160px;
+      height:160px;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(2,6,23,0.08);
+      flex-shrink:0;
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:20px;margin:0;text-align:center}
+    .title{font-weight:600;color:var(--muted);font-size:13px;margin-top:4px;text-align:center}
+    .contact{
+      margin-top:6px;
+      width:100%;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;flex-direction:column;gap:8px;align-items:flex-start
+    }
+    .contact .item{display:flex;gap:8px;align-items:center}
+    .contact .label{font-weight:600;color:#111827;font-size:13px}
+    .skills,
+    .languages{width:100%;}
+    .section-title{font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:1px;margin-bottom:8px}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:#f3f4f6;padding:6px 10px;border-radius:999px;font-size:12px;color:#111827}
+
+    /* right column */
+    .right{padding:28px 32px}
+    .heading-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .profile{margin-top:4px;color:var(--muted);line-height:1.5}
+    .section{margin-top:18px}
+    .role{font-weight:600;color:var(--accent)}
+    .job{display:flex;justify-content:space-between;align-items:flex-start}
+    .job .meta{color:var(--muted);font-size:13px}
+    .bullets{margin-top:8px;padding-left:18px}
+    .education .school{display:flex;justify-content:space-between;align-items:center}
+    .date{color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:820px){
+      .resume{grid-template-columns:1fr;}
+      .left{flex-direction:row;padding:18px;align-items:center;border-right:none;border-bottom:1px solid #eef2f7}
+      .photo{width:88px;height:88px}
+      .right{padding:20px}
+    }
+
+    /* print */
+    @media print{
+      body{padding:0}
+      .resume{box-shadow:none;border-radius:0}
+    }
+  </style>
+</head>
+<body>
+  <article class="resume" role="article">
+    <aside class="left" aria-label="Profile and contact">
+      <div class="photo" title="Replace 'profile.jpg' with your picture">
+        <img src="profile.jpg" alt="Your Name">
+      </div>
+
+      <div style="text-align:center">
+        <h1>Anany Sahu</h1>
+        <div class="title">Full Stack Developer</div>
+      </div>
+
+      <div class="contact" style="margin-top:8px">
+        <div class="item"><span class="label">Email:</span><span>sahuanany@gmail.com</span></div>
+        <div class="item"><span class="label">Phone:</span><span>+91 8460891351</span></div>
+        <div class="item"><span class="label">Location:</span><span>Ghaziabad, India</span></div>
+        <div class="item"><span class="label">Website:</span><span>yourportfolio.com</span></div>
+      </div>
+
+      <div class="skills section" style="width:100%;margin-top:auto">
+        <div class="section-title">Skills</div>
+        <div class="skill-list">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+        </div>
+      </div>
+
+      <div class="languages section" style="width:100%">
+        <div class="section-title">Languages</div>
+        <div class="skill-list">
+          <span class="chip">English</span>
+          <span class="chip">Hindi</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="right" role="main">
+      <div class="heading-row">
+        <div style="max-width:72%">
+          <div class="section-title">Profile</div>
+          <p class="profile">A concise professional summary (2–4 lines) describing your experience, area of expertise and what you bring to the role. Example: "Frontend developer with 4+ years building responsive web apps, focused on accessibility and performance."</p>
+        </div>
+        <div style="text-align:right;min-width:120px">
+          <div class="section-title">Availability</div>
+          <div style="font-weight:600">Open to work</div>
+        </div>
+      </div>
+
+      <!-- <section class="section">
+        <div class="section-title">Experience</div> -->
+
+        <div class="job">
+          <!-- <div>
+            <div class="role">Senior Frontend Developer — Company ABC</div>
+            <div class="meta">Jan 2022 — Present • Remote</div>
+            <ul class="bullets">
+              <li>Built and maintained SPA using React and Redux used by 50k+ monthly users.</li>
+              <li>Improved first-load performance by 45% via code-splitting and lazy loading.</li>
+            </ul>
+          </div> -->
+        </div>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid #eef2f7">
+
+        <div class="job">
+          <!-- <div>
+            <div class="role">Frontend Developer — Company XYZ</div>
+            <div class="meta">Jul 2019 — Dec 2021 • City, Country</div>
+            <ul class="bullets">
+              <li>Developed component library and design system which reduced onboarding time by 30%.</li>
+              <li>Collaborated with product and design to ship accessible features.</li>
+            </ul>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Education</div>
+        <div class="education">
+          <div class="school">
+            <div>
+              <div style="font-weight:600">B.Tech — Information Technology</div>
+              <div class="meta">ABES Engineering College</div>
+            </div>
+            <div class="date">2023 — 2027</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Projects</div>
+        <div>
+          <div style="font-weight:600">Project Name</div>
+          <div class="meta">Short 1-line project description and tech stack.</div>
+          <ul class="bullets">
+            <li>What you did and impact. Example: "Built an e-commerce prototype that handled 10k concurrent users."</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Certificates & Trainings</div>
+        <div style="font-size:14px;color:var(--muted)">List relevant certificates (e.g., AWS, Google, Coursera) — include year.</div>
+      </section>
+
+    </main>
+  </article>
+</body>
+<script>
+     
+</script>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+    }
+
+    .time-box button {
+      width: 80px;
+      height: 80px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background: white;
+      color: #333;
+      cursor: default;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .time-box button:hover {
+      transform: scale(1.05);
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="buttons">
+      <div class="time-box">
+        <button id="days">00</button>
+        <div class="label">Days</div>
+      </div>
+      <div class="time-box">
+        <button id="hours">00</button>
+        <div class="label">Hours</div>
+      </div>
+      <div class="time-box">
+        <button id="minutes">00</button>
+        <div class="label">Minutes</div>
+      </div>
+      <div class="time-box">
+        <button id="seconds">00</button>
+        <div class="label">Seconds</div>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let eventdate = new Date("2025-10-10 20:49:00").getTime();
+    let dayss = document.getElementById('days');
+    let hourss = document.getElementById('hours');
+    let minutess = document.getElementById('minutes');
+    let secondss = document.getElementById('seconds');
+    let result = document.getElementById('result');
+
+    function cdown() {
+      let now = new Date().getTime();
+      let left = eventdate - now;
+
+      if (left <= 0) {
+        clearInterval(interval);
+        result.innerHTML = "<h4>The countdown is over</h4>";
+        dayss.innerHTML = hourss.innerHTML = minutess.innerHTML = secondss.innerHTML = "00";
+      } else {
+        let days = Math.floor(left / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((left % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((left % (1000 * 60)) / 1000);
+
+        dayss.innerHTML = days;
+        hourss.innerHTML = hours;
+        minutess.innerHTML = minutes;
+        secondss.innerHTML = seconds;
+      }
+    }
+
+    let interval = setInterval(cdown, 1000);
+    cdown();
+  </script>
+</body>
+</html>

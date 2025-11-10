@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 320px;
+    }
+
+    #clock {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #start {
+      background: #4caf50;
+      color: white;
+    }
+
+    #stop {
+      background: #f44336;
+      color: white;
+    }
+
+    #reset {
+      background: #2196f3;
+      color: white;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="clock">00:00:00</h2>
+    <div class="buttons">
+      <button id="stop">Stop</button>
+      <button id="start">Start</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let start = document.getElementById('start');
+    let stop = document.getElementById('stop');
+    let reset = document.getElementById('reset');
+    let clock = document.getElementById('clock');
+    let hours = 0, minutes = 0, seconds = 0;
+    let interval;
+
+    function startwatch() {
+      if (seconds == 60) {
+        seconds = 0;
+        if (minutes == 60) {
+          hours++;
+          minutes = 0;
+        } else {
+          minutes++;
+        }
+      } else {
+        seconds++;
+      }
+
+      let str = 
+        (hours < 10 ? "0" + hours : hours) + ":" +
+        (minutes < 10 ? "0" + minutes : minutes) + ":" +
+        (seconds < 10 ? "0" + seconds : seconds);
+
+      clock.innerHTML = str;
+    }
+
+    start.addEventListener('click', function () {
+      if (!interval) interval = setInterval(startwatch, 1000);
+    });
+
+    stop.addEventListener('click', function () {
+      clearInterval(interval);
+      interval = null;
+    });
+
+    reset.addEventListener('click', function () {
+      clearInterval(interval);
+      interval = null;
+      hours = minutes = seconds = 0;
+      clock.innerHTML = "00:00:00";
+    });
+  </script>
+</body>
+</html>
